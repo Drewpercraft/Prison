@@ -18,7 +18,7 @@ public class MinesBlockListener implements Listener {
 			return;
 		}
 		for (Mine m : Mines.i.mm.getMines().values()) {
-			if (m.withinMine(e.getPlayer().getLocation())) {
+			if (m.withinMine(e.getBlock().getLocation())) {
 				if (m.ranks == null) break;
 				if (m.ranks.size() < 1) break;
 				UserInfo info = Ranks.i.getUserInfo(e.getPlayer().getName());
