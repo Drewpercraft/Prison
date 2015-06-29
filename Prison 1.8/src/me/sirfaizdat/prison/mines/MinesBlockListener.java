@@ -17,8 +17,10 @@ public class MinesBlockListener implements Listener {
 		if (e.getPlayer().hasPermission("prison.mines.bypassprotection")) {
 			return;
 		}
+		boolean nonMineBlock = true;
 		for (Mine m : Mines.i.mm.getMines().values()) {
 			if (m.withinMine(e.getBlock().getLocation())) {
+				nonMineBlock = false;
 				if (m.ranks == null) break;
 				if (m.ranks.size() < 1) break;
 				UserInfo info = Ranks.i.getUserInfo(e.getPlayer().getName());
@@ -31,6 +33,9 @@ public class MinesBlockListener implements Listener {
 					e.setCancelled(true);
 				}
 			}
+		}
+		if (nonMineBlock && !e.getPlayer().hasPermission("prison.mines.bypassgrief")) {
+			e.setCancelled(true);			
 		}
 	}
 
@@ -39,8 +44,10 @@ public class MinesBlockListener implements Listener {
 		if (e.getPlayer().hasPermission("prison.mines.bypassprotection")) {
 			return;
 		}
+		boolean nonMineBlock = true;
 		for (Mine m : Mines.i.mm.getMines().values()) {
-			if (m.withinMine(e.getPlayer().getLocation())) {
+			if (m.withinMine(e.getBlock().getLocation())) {
+				nonMineBlock = false;
 				if (m.ranks == null) break;
 				if (m.ranks.size() < 1) break;
 				UserInfo info = Ranks.i.getUserInfo(e.getPlayer().getName());
@@ -53,6 +60,9 @@ public class MinesBlockListener implements Listener {
 					e.setCancelled(true);
 				}
 			}
+		}
+		if (nonMineBlock && !e.getPlayer().hasPermission("prison.mines.bypassgrief")) {
+			e.setCancelled(true);			
 		}
 	}
 
