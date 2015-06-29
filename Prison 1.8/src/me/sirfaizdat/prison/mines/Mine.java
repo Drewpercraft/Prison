@@ -175,12 +175,12 @@ public class Mine {
 			return false;
 		}
 
-		int x1 = minX - 1;
-		int x2 = maxX + 1;
-		int z1 = minZ - 1;
-		int z2 = maxZ + 1;
-		int y1 = minY - 1;
-		int y2 = maxY + 1;
+		int x1 = minX;
+		int x2 = maxX;
+		int z1 = minZ;
+		int z2 = maxZ;
+		int y1 = minY;
+		int y2 = maxY;
 
 		double px = l.getX();
 		double pz = l.getZ();
