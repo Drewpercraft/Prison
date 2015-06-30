@@ -3,17 +3,12 @@ package com.ngrok.dmp9software.prison.ranks;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
-import org.bukkit.inventory.ItemStack;
 
-import io.github.austinv11.GUIAPI.GUIAPI;
 import io.github.austinv11.GUIAPI.Menu;
-import io.github.austinv11.GUIAPI.MenuInteractEvent;
-import io.github.austinv11.GUIAPI.Button;
 
 public class GUISysCore {
 	public Inventory inv;
