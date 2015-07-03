@@ -14,55 +14,59 @@ public class MinesBlockListener implements Listener {
 	
 	@EventHandler
 	public void onBlockBreak(BlockBreakEvent e) {
-		if (e.getPlayer().hasPermission("prison.mines.bypassprotection")) {
-			return;
-		}
-		boolean nonMineBlock = true;
-		for (Mine m : Mines.i.mm.getMines().values()) {
-			if (m.withinMine(e.getBlock().getLocation())) {
-				nonMineBlock = false;
-				if (m.ranks == null) break;
-				if (m.ranks.size() < 1) break;
-				UserInfo info = Ranks.i.getUserInfo(e.getPlayer().getName());
-				if (info == null) break;
-				boolean[] conditions = new boolean[m.ranks.size()];
-				for (int i = 0; i < m.ranks.size(); i++) {
-					conditions[i] = info.getCurrentRank().getName().equals(m.ranks.get(i));
-				}
-				if (!Booleans.contains(conditions, true)) {
-					e.setCancelled(true);
+		if (e.getBlock().getLocation().getWorld().getName().equalsIgnoreCase("prison")) {
+			if (e.getPlayer().hasPermission("prison.mines.bypassprotection")) {
+				return;
+			}
+			boolean nonMineBlock = true;
+			for (Mine m : Mines.i.mm.getMines().values()) {
+				if (m.withinMine(e.getBlock().getLocation())) {
+					nonMineBlock = false;
+					if (m.ranks == null) break;
+					if (m.ranks.size() < 1) break;
+					UserInfo info = Ranks.i.getUserInfo(e.getPlayer().getName());
+					if (info == null) break;
+					boolean[] conditions = new boolean[m.ranks.size()];
+					for (int i = 0; i < m.ranks.size(); i++) {
+						conditions[i] = info.getCurrentRank().getName().equals(m.ranks.get(i));
+					}
+					if (!Booleans.contains(conditions, true)) {
+						e.setCancelled(true);
+					}
 				}
 			}
-		}
-		if (nonMineBlock && !e.getPlayer().hasPermission("prison.mines.bypassgrief")) {
-			e.setCancelled(true);			
+			if (nonMineBlock && !e.getPlayer().hasPermission("prison.mines.bypassgrief")) {
+				e.setCancelled(true);			
+			}
 		}
 	}
 
 	@EventHandler
 	public void onBlockPlace(BlockPlaceEvent e) {
-		if (e.getPlayer().hasPermission("prison.mines.bypassprotection")) {
-			return;
-		}
-		boolean nonMineBlock = true;
-		for (Mine m : Mines.i.mm.getMines().values()) {
-			if (m.withinMine(e.getBlock().getLocation())) {
-				nonMineBlock = false;
-				if (m.ranks == null) break;
-				if (m.ranks.size() < 1) break;
-				UserInfo info = Ranks.i.getUserInfo(e.getPlayer().getName());
-				if (info == null) break;
-				boolean[] conditions = new boolean[m.ranks.size()];
-				for (int i = 0; i < m.ranks.size(); i++) {
-					conditions[i] = info.getCurrentRank().getName().equals(m.ranks.get(i));
-				}
-				if (!Booleans.contains(conditions, true)) {
-					e.setCancelled(true);
+		if (e.getBlock().getLocation().getWorld().getName().equalsIgnoreCase("prison")) {
+			if (e.getPlayer().hasPermission("prison.mines.bypassprotection")) {
+				return;
+			}
+			boolean nonMineBlock = true;
+			for (Mine m : Mines.i.mm.getMines().values()) {
+				if (m.withinMine(e.getBlock().getLocation())) {
+					nonMineBlock = false;
+					if (m.ranks == null) break;
+					if (m.ranks.size() < 1) break;
+					UserInfo info = Ranks.i.getUserInfo(e.getPlayer().getName());
+					if (info == null) break;
+					boolean[] conditions = new boolean[m.ranks.size()];
+					for (int i = 0; i < m.ranks.size(); i++) {
+						conditions[i] = info.getCurrentRank().getName().equals(m.ranks.get(i));
+					}
+					if (!Booleans.contains(conditions, true)) {
+						e.setCancelled(true);
+					}
 				}
 			}
-		}
-		if (nonMineBlock && !e.getPlayer().hasPermission("prison.mines.bypassgrief")) {
-			e.setCancelled(true);			
+			if (nonMineBlock && !e.getPlayer().hasPermission("prison.mines.bypassgrief")) {
+				e.setCancelled(true);			
+			}
 		}
 	}
 
