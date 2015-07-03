@@ -24,7 +24,7 @@ public class MessageUtil {
 		add("general.notEnoughArgs", "&cNot enough arguments. &6Proper usage: %0");
 		add("general.noCmdPassed", "&cPlease specify a command.");
 		add("general.updateAvailable", "&aThere is a new version of Prison available &7(%0)&a! &6Type &c/prison update &6to update.");
-		add("general.versionString", "&6Prison v" + Prison.i().getDescription().getVersion() + "\n&cAuthors: TheOneAndOnlyDMP9, SirFaizdat\n&cTester: MattXXXQ\n&bWebsite: " + Prison.i().getDescription().getWebsite() + "\n&7(C) 2015 TheOneAndOnlyDMP9 and SirFaizdat All Rights Reserved.");
+		add("general.versionString", "&6Prison v" + Prison.i().getDescription().getVersion() + "\n&cAuthors: TheOneAndOnlyDMP9, SirFaizdat\n&cModified By: Drewpercraft/HitechWizard\n&cTester: MattXXXQ\n&bWebsite: " + Prison.i().getDescription().getWebsite() + "\n&7(C) 2015 TheOneAndOnlyDMP9 and SirFaizdat All Rights Reserved.");
 		add("general.reloaded", "&aReloaded.");
 		add("general.itemManagerNotLoaded", "&6Please wait for the item manager to load.");
 		add("general.noUpdate", "&aYou are running the latest version!");
