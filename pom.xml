@@ -78,10 +78,10 @@
                 <directory>${project.basedir}</directory>
                 <filtering>true</filtering>
                 <includes>                    
-                    <include>bin/config.yml</include>
-                    <include>bin/localitems.csv</include>
-                    <include>bin/plugin.yml</include>
-                    <include>bin/ranks.yml</include>
+                    <include>config.yml</include>
+                    <include>localitems.csv</include>
+                    <include>plugin.yml</include>
+                    <include>ranks.yml</include>
                     <include>CONTRIBUTING.md</include>
                     <include>README.md</include>
                 </includes>
@@ -127,7 +127,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <file>bin/plugin.yml</file>
+                    <file>target/classes/plugin.yml</file>
                     <replacements>
                         <replacement>
                             <token>maven-version-number</token>
