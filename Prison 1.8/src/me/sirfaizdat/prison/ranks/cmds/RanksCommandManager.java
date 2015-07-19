@@ -88,6 +88,7 @@ public class RanksCommandManager extends AbstractCommandManager {
 		commands.put("remove", new CmdRemoveRank());
 		commands.put("promote", new CmdPromote());
 		commands.put("demote", new CmdDemote());
+		commands.put("leader",  new CmdLeader());
 	}
 
 }

@@ -47,4 +47,7 @@ public class UserInfo {
 		this.nextRank = nextRank;
 	}
 
+	public double getWorth() {
+		return this.currentRank.getPrice() + 0; 
+	}
 }
