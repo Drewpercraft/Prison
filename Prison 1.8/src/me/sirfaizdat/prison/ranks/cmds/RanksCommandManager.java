@@ -15,7 +15,6 @@ import me.sirfaizdat.prison.ranks.Ranks;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.util.ChatPaginator;
 
 /**
  * @author SirFaizdat
@@ -88,7 +87,7 @@ public class RanksCommandManager extends AbstractCommandManager {
 		commands.put("remove", new CmdRemoveRank());
 		commands.put("promote", new CmdPromote());
 		commands.put("demote", new CmdDemote());
-		commands.put("leader",  new CmdLeader());
+		//commands.put("leader",  new CmdLeader());
 	}
 
 }
